@@ -23,15 +23,15 @@
 
         e.preventDefault();
         var heading = $(this).attr('href');
-        var scrollDistance = $(heading).offset().top;
+        var scrollDistance = $(heading).offset().top - 40;
 
         $('html, body').animate({
             scrollTop: scrollDistance + 'px'
         }, 500);
 
         // Hide the menu once clicked if mobile
-        if ($('header').hasClass('active')) {
-            $('header, body').removeClass('active');
+        if ($('#nav-menu').hasClass('active')) {
+            $('#nav-menu, body').removeClass('active');
         }
     });
 
@@ -78,12 +78,12 @@
 
     // Open mobile menu
     $('#mobile-menu-open').click(function() {
-        $('header, body').addClass('active');
+        $('#nav-menu, body').addClass('active');
     });
 
     // Close mobile menu
     $('#mobile-menu-close').click(function() {
-        $('header, body').removeClass('active');
+        $('#nav-menu, body').removeClass('active');
     });
 
     // Load additional projects
